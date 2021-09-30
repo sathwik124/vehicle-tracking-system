@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tracker Go</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#go").click(function(){
+        $("#div1").load("come.php",function(responseTxt,statusTxt,xhr){
+          if(statusTxt == "success")
+            console.log("Externel content loaded successfully!!!");
+          if(statusTxt == "error")
+            alert("Error: "+ xhr.status+": "+xhr.statusText);
+        });
+      });
+    });
+  </script>
+  <style>
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      font-family: Arial;
+      background:cornsilk;
+    }
+    .header{
+      padding: 30px;
+      text-align: center;
+      background: url(headback.jpeg);
+    }
+    .header h1{
+      font-size: 50px;
+      color: white;
+    }
+    .header p{
+      font-size: 20px;
+      color: white;
+    }
+    .navbar{
+      overflow: hidden;
+      background-color:black;
+    }
+    .navbar a{
+      float:left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      background-color: blanchedalmond;
+      color: black;
+    }
+    .navbar a.active {
+      background-color: #2196F3;
+      color: white;
+    }
+    .navbar button{
+      margin-top: 4px;
+      background-color:blueviolet;
+      color: blanchedalmond;
+      padding: 10px;
+      float:right;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .buss{
+      padding: 30px;
+      background: white;
+    }
+    .buss p{
+      font-size: 20px;
+      text-align: center;
+    }
+    .note{
+      font-size: 120%;
+      color: brown;
+    }
+    .note1{
+      font-size: 120%;
+      color: green;
+    }
+    .box{
+     max-width:650px;
+     margin:auto;
+    }
+    .box h2{
+      border: 5px solid orange;
+      padding:5px;
+      color: black;
+      text-align:center;
+    }
+    .card{
+      background-color:whitesmoke;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .navbar input[type=text]{
+      float: right;
+      padding: 6px;
+      border-radius: 5px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-right: 16px;
+      font-size: 17px;
+      border: 1px solid blanchedalmond;
+    }
+    .navbar .icon{
+      display: none;
+    }
+    #data{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#data th{
+  background: black;
+  color: white;
+}
+#data td, #data th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  border-style: groove;
+}
+#data tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    @media screen and (max-width: 637px) {
+      .navbar a:not(:first-child) {display: none;}
+      .navbar a.icon {
+      float: right;
+      display: block;
+      }
+      .navbar input[type=text]{
+      float: right;
+      padding: 6px;
+      border-radius: 5px;
+      margin-top: 8px;
+      margin-bottom: 5px;
+      margin-right: 10px;
+      font-size: 10px;
+      }
+      .note,.note1{
+        display: block;
+      }
+    }
+    @media screen and (max-width: 637px) {
+      .navbar.responsive {position: relative;}
+      .navbar.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      }
+      .navbar.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+      }
+      .navbar.responsive input[type=text]{
+      float: none;
+      display: block;
+      text-align: left;
+      width:100%;
+      margin-bottom: 8px;
+      padding:10px;
+      }
+    }
+    .menu{
+      background: palevioletred;
+      padding: 20px;
+      list-style: square inside;
+      border-radius: 5px;
+    }
+    .menu li{
+         background: pink;
+         padding: 5px;
+         border-bottom: black solid;
+         border-bottom-width: thin;
+    }
+    .menu li:hover{
+      background: powderblue;
+    }
+    .one p{
+        display: none;
+    }
+    .one.addclass p{
+        float: none;
+        display: block;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .two p{
+        display: none;
+    }
+    .two.addclass2 p{
+        float: none;
+        display: block;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .three p{
+        display: none;
+    }
+    .three.addclass3 p{
+        float: none;
+        display: block;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .four p{
+        display: none;
+    }
+    .four.addclass4 p{
+        float: none;
+        display: block;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .five p{
+        display: none;
+    }
+    .five.addclass5 p{
+        float: none;
+        display: block;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .six p{
+        display: none;
+    }
+    .six.addclass6 p{
+        float: none;
+        display: block;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .seven p{
+        display: none;
+    }
+    .seven.addclass7 p{
+        float: none;
+        display: block;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .eight p{
+        display: none;
+    }
+    .eight.addclass8 p{
+        float: none;
+        display: block;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .nine p{
+        display: none;
+    }
+    .nine.addclass9 p{
+        float: none;
+        display: block;
+        text-align: justify;
+        font-size: 15px;
+    }
+    .ten p{
+        display: none;
+    }
+    .ten.addclass10 p{
+        float: none;
+        display: block;
+        text-align: justify;
+        font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Tracker Go</h1>
+    <p>Track your bus location easily!!!</p>
+  </div>
+  <div class="navbar" id="topnav">
+     <a class="active" href="index.html">Home</a>
+     <a href="details.html">Details</a>
+     <a href="aboutus.html">About us</a>
+     <a href="mailto:devavathemanth@gmail.com">Feed Back</a>
+     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+     <input id="sac" type="text" placeholder="Search here for bus">
+     <button type="button" onclick="srhfunc()"><i class="fa fa-search"></i></button>
+  </div>
+  <script>
+    function srhfunc() {
+      var invalue = document.getElementById("sac").value;
+      if(invalue>=1 && invalue<=5){
+       window.location.replace("#"+invalue);
+      }
+      else{
+        alert("enter a valid bus number");
+      }
+    }
+    function myFunction() {
+      var x = document.getElementById("topnav");
+      if (x.className === "navbar") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar";
+      }
+    }
+  </script>
+  <div class="buss">
+    <p>We are here to help you with finding your bus location!!!</p>
+    <div class="topper">
+        <h2>Our Bus Availability Areas</h2>
+        <ul class="menu">
+          <li class="one" id="1t" onclick="myfunc1()">ECIL ‘X’ ROADS - VCE <p>Via :Radika Theatre, A.S.Rao Nagar, Naredmet ‘x’ Roads, Safilguda Old P.S, Vinayakanagar, Anandabagh, Malkajigiri, Mettiguda, Sangeet, Clock Tower, Patny, Bata, Tankbund, Secretariat, Lakadikapool, Mehdipatnam.</p></li>
+          <li class="two" id="2t" onclick="myfunc2()">VANASTHALIPURAM RED TANK - VCE <p>Via : Sushma Theatre, Panama, L.B. Nagar, Kothapet, Chaitanyapuri, Dilsukhnagar, Malakpet, Chaderghat, Moinza Market, Abids, Nampally, Public Gardens, Lakadikapool, Mehdipatnam.</p></li>
+          <li class="three" id="3t" onclick="myfunc3()">UPPAL BUS DEPOT - VCE <p>Via : Uppal ‘x’ Roads, Habsiguda, Tarnaka, Adikmet, Vidyanagar, Shankermutt, Nallakunta Narayanaguda, Himayathnagar, Liberty, Lakadikapool, Mehdipatnam, Nanalnagar</p></li>
+          <li class="four" id="4t" onclick="myfunc4()">K.P.H.B. (JNTU) - VCE <p>Via : Vivekananda Nagar Colony, Kukatpally, Metro, Moosapet, Erragadda, S.R.Nagar, Ameerpet, Punjagutta, NIMS, Erramanjil Colony, Banjara Hills, Masab Tank, NMDC, Mehdipatnam, Nanalnagar</p></li>
+          <li class="five" id="5t" onclick="myfunc5()">BHEERAMGUDA (BHEL) - VCE <p>Via : Ashok Nagar, Lingampally ‘x’ Roads, Chandanagar, Gangaram, Madinaguda, Alwyn ‘x’ Roads, Miyapur, Nizampet x Roads, JNTU, Malaysian Town ship, Hitech City, Shilparamam, Mindspace, Gachibowli, Outer Ring Road, Narsing</p></li>
+          <li class="six" id="6t" onclick="myfunc6()">CHILKALGUDA (Sec’bad Station) - VCE <p>Via: Musheerabad, RTC ‘x’ Roads, VST, Baghlingampally, Tourist Hotel, Kachiguda, YMCA, Old MLA Quarters, Basheerabagh, Lakadikapool, Mehdipatnam</p></li>
+          <li class="seven" id="7t" onclick="myfunc7()">ALWAL (Indira Gandhi Statue) – VCE <p>Via: Lothukunta, Tirumalgiri, Kharkhana, JBS, Patny, Paradise, Begumpet, Punjagutta, Nagarjuna Circle, Banjara Hills, Masab Tank, NMDC, Mehdipatnam, Piilar No.68, Langarhouse</p></li>
+          <li class="eight" id="8t" onclick="myfunc8()">VANASTHALIPURAM RYTHU BAZAR – VCE <p>Via: Hasthinapuram, B.N.Reddy, Hastinapuram, Sagar Ring Road, Karmanghat, Chempapet, Santosh:nagar, Owaisi Hospital, Midhani ‘x’ Roads, Chandrayana Gutta, Aramghar ‘x’ Roads, Rajendranagar, Attapur, VCE</p></li>
+          <li class="nine" id="9t" onclick="myfunc9()">Nagole -VCE <p>Via: Uppal X Roads, Ramantapur, Amberpet, 6 No., VST, R.T.C. 'X' Roads, Lower Tank Bund, Lakadikapool, Mehdipatnam</p></li>
+          <li class="ten" id="10t" onclick="myfunc10()">Aramghar - VCE <p>Via: Rajendranagar Diary Forum, Attapur</p></li>
+        </ul>
+    </div>
+    <script>
+      function myfunc1(){
+        var x=document.getElementById('1t');
+        if(x.className === "one"){
+          x.className += " addclass";
+        }
+        else{
+          x.className = "one";
+        }
+      }
+      function myfunc2(){
+        var x=document.getElementById('2t');
+        if(x.className === "two"){
+          x.className += " addclass2";
+        }
+        else{
+          x.className = "two";
+        }
+      }
+      function myfunc10(){
+        var x=document.getElementById('10t');
+        if(x.className === "ten"){
+          x.className += " addclass10";
+        }
+        else{
+          x.className = "ten";
+        }
+      }
+      function myfunc3(){
+        var x=document.getElementById('3t');
+        if(x.className === "three"){
+          x.className += " addclass3";
+        }
+        else{
+          x.className = "three";
+        }
+      }
+      function myfunc4(){
+        var x=document.getElementById('4t');
+        if(x.className === "four"){
+          x.className += " addclass4";
+        }
+        else{
+          x.className = "four";
+        }
+      }
+      function myfunc5(){
+        var x=document.getElementById('5t');
+        if(x.className === "five"){
+          x.className += " addclass5";
+        }
+        else{
+          x.className = "five";
+        }
+      }
+      function myfunc6(){
+        var x=document.getElementById('6t');
+        if(x.className === "six"){
+          x.className += " addclass6";
+        }
+        else{
+          x.className = "six";
+        }
+      }
+      function myfunc7(){
+        var x=document.getElementById('7t');
+        if(x.className === "seven"){
+          x.className += " addclass7";
+        }
+        else{
+          x.className = "seven";
+        }
+      }
+      function myfunc8(){
+        var x=document.getElementById('8t');
+        if(x.className === "eight"){
+          x.className += " addclass8";
+        }
+        else{
+          x.className = "eight";
+        }
+      }
+      function myfunc9(){
+        var x=document.getElementById('9t');
+        if(x.className === "nine"){
+          x.className += " addclass9";
+        }
+        else{
+          x.className = "nine";
+        }
+      }
+    </script>
+    <div class="box"><h2 id="1" style="background-color:white;font-size:15px"><span class="note1">[ECIL 'X' ROADS-VASV]</span><span class="note">[BUS.NO-1]</span><span class="note1">[S.SREENU]</span><span class="note">[4862560983]</span> <span id="div1"> </span> <button id="go" style="background-color: blanchedalmond; border-radius: 8px; cursor: pointer;" ><img src="bus.png" style="width:100px;height:50px"></button></h2></div>
+    <div class="box"><h2 id="2" style="background-color:white;font-size:15px"><span class="note1">[VANASTHALIPURAM-VASV]</span><span class="note">[BUS.NO-2]</span><span class="note1">[K.RAJU]</span><span class="note">[4862560983]</span> <span id="div2"> </span> <button id="go1" style="background-color: blanchedalmond; border-radius: 8px; cursor: pointer;" ><img src="bus.png" style="width:100px;height:50px"></button></h2></div>
+    <div class="box"><h2 id="3" style="background-color:white;font-size:15px"><span class="note1">[UPPAL BUS DEPOT-VASV]</span><span class="note">[BUS.NO-3]</span><span class="note1">[D.KESHAV]</span><span class="note">[4862560983]</span> <span id="div3"> </span> <button id="go2" style="background-color: blanchedalmond; border-radius: 8px; cursor: pointer;" ><img src="bus.png" style="width:100px;height:50px"></button></h2></div>
+    <div class="box"><h2 id="4" style="background-color:white;font-size:15px"><span class="note1">[K.P.H.B. (JNTU)-VASV]</span><span class="note">[BUS.NO-4]</span><span class="note1">[U.RAMESH]</span><span class="note">[4862560983]</span> <span id="div4"> </span> <button id="go3" style="background-color: blanchedalmond; border-radius: 8px; cursor: pointer;" ><img src="bus.png" style="width:100px;height:50px"></button></h2></div>
+    <div class="box"><h2 id="5" style="background-color:white;font-size:15px"><span class="note1">[BHEERAMGUDA (BHEL)-VASV]</span><span class="note">[BUS.NO-5]</span><span class="note1">[S.GIRI]</span><span class="note">[4862560983]</span> <span id="div5"> </span> <button id="go4" style="background-color: blanchedalmond; border-radius: 8px; cursor: pointer;" ><img src="bus.png" style="width:100px;height:50px"></button></h2></div>
+  </div>
+  <div class="card">
+    <span><p style="color:black;background-color:powderblue;text-align:center;font-size:20px;padding:10px">OUR ADDRESS<br>Vasavi College of Engineering<br>Sponsored by Vasavi Academy of Education<br>Affiliated to Osmania University, Hyderabad<br>Approved by AICTE, New Delhi<br>9-5-81, Ibrahimbagh<br>Hyderabad - 500 031<br>Telangana, India</p></span>
+    <p align="center"><img src="tree.jpeg" alt="tree.com" height="150" width="150">
+  </div>
+</body>
+</html>

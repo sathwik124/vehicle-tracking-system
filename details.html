@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+           box-sizing: border-box;
+        }
+        body{
+          font-family: Arial;
+          background:cornsilk;
+        }
+        .navbar{
+           overflow: hidden;
+           background-color:black;
+        }
+        .navbar a{
+           float:left;
+           display: block;
+           color: #f2f2f2;
+           text-align: center;
+           padding: 14px 16px;
+           text-decoration: none;
+        }
+        .navbar a:hover {
+           background-color: blanchedalmond;
+           color: black;
+        }
+        .navbar a.active {
+           background-color: #2196F3;
+           color: white;
+        }
+        .navbar .icon{
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .navbar a:not(:nth-child(2)) {display: none;}
+            .navbar a.icon {
+            float: right;
+            display: block;
+            }
+        }
+        @media screen and (max-width: 600px) {
+          .navbar.responsive {position: relative;}
+          .navbar.responsive a.icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+          }
+          .navbar.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+        }
+        .notest{
+          padding: 10px;
+          background: white;
+          text-align: center;
+          background-size: cover
+        }
+        .notest p{
+          font-size: 20px;
+          background: fixed;
+        }
+        .notest img{
+          height: 25px;
+        }
+    </style>
+</head>
+    <body>
+        <div class="navbar" id="topnav">
+            <a href="index.html">Home</a>
+            <a class="active" href="details.html">Details</a>
+            <a href="aboutus.html">About us</a>
+            <a href="mailto:devavathemanth@gmail.com">Feed Back</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+             <i class="fa fa-bars"></i>
+           </a>
+        </div>
+         <script>
+            function myFunction() {
+              var x = document.getElementById("topnav");
+              if (x.className === "navbar") {
+                x.className += " responsive";
+              } else {
+                x.className = "navbar";
+              }
+            }
+        </script>
+        <div class="notest">
+          <h1>How to use Tracker Go??</h1><br>
+          <p>Click on the bus icon "<img src="bus.png">" to get location. You will be forwarded to google maps with current location of your bus.<br>If you want latest updated location then go back to home page again and click bus icon button again.You will be forwarded with new location in google maps.<br></p>
+          <h1>How to use search box?</h1><br>
+          <p>Enter the bus no you want and click enter. You will diverted to that bus no button in page<br></p>
+        </div>
+    </body>
+</html>
